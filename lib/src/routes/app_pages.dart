@@ -9,6 +9,7 @@ import 'package:iqts_store/ui/views/category/pages/category_page.dart';
 import 'package:iqts_store/ui/views/compras/pages/compra_page.dart';
 import 'package:iqts_store/ui/views/contador/pages/contador_page.dart';
 import 'package:iqts_store/ui/views/home/pages/home_page.dart';
+import 'package:iqts_store/ui/views/searcher/page/search_detalle_page.dart';
 import 'package:iqts_store/ui/views/searcher/page/search_page.dart';
 import 'package:iqts_store/ui/views/usuario/pages/user_page.dart';
 import 'package:iqts_store/ui/views/vender/pages/venta_page.dart';
@@ -44,6 +45,12 @@ abstract class AppPages {
         page: () => const CompraPage(),
         binding: CompraBinding()),
     GetPage(
-        name: Routes.USER, page: () => const UserPage(), binding: UserBinding())
+        name: Routes.USER,
+        page: () => const UserPage(),
+        binding: UserBinding()),
+    GetPage(
+        name: Routes.SEARCH_DETALLE,
+        page: () => const SearchDetallePage(),
+        binding: UserBinding())
   ];
 }

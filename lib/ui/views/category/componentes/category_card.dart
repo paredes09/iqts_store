@@ -11,7 +11,7 @@ class CardCategory extends GetView {
       width: 120,
       child: Card(
         elevation: 4,
-        color: Color.fromARGB(228, 255, 255, 255),
+        color: const Color.fromARGB(228, 255, 255, 255),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

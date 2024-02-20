@@ -16,6 +16,7 @@ class CategoryPage extends GetView<CategoryController> {
           padding: const EdgeInsets.all(10),
           crossAxisCount: 3,
           mainAxisSpacing: 5,
+          crossAxisSpacing: 2,
           children: const [
             CardCategory(),
             CardCategory(),
