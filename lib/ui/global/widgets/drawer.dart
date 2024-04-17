@@ -32,9 +32,8 @@ class DrawerPage extends GetView {
         itemBuilder: (BuildContext context, int index) {
           if (index == 0) {
             return const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 238, 220, 20),
-              ),
+              decoration:
+                  BoxDecoration(color: Color.fromARGB(119, 74, 236, 98)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,

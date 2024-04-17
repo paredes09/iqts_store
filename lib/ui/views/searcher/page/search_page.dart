@@ -10,7 +10,6 @@ class SearchPage extends GetView<SearchsController> {
     final TextEditingController textController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.amberAccent,
           actions: [
             IconButton(
               onPressed: () {
@@ -26,11 +25,10 @@ class SearchPage extends GetView<SearchsController> {
             onChanged: (value) => {controller.onSearch(value)},
             controller: textController,
             autofocus: true,
-            cursorColor: Colors.white,
+            cursorColor: Colors.black54,
             decoration: const InputDecoration(
               border: InputBorder.none,
               hintText: 'Buscar en Iqts Store',
-              hintStyle: TextStyle(color: Colors.white),
             ),
           )),
       body: Obx(() {

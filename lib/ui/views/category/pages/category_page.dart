@@ -9,9 +9,7 @@ class CategoryPage extends GetView<CategoryController> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 250, 246, 242),
-        appBar: AppBar(
-            backgroundColor: Colors.amberAccent,
-            title: const Text('Categorías')),
+        appBar: AppBar(title: const Text('Categorías')),
         body: GridView.count(
           padding: const EdgeInsets.all(10),
           crossAxisCount: 3,

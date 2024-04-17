@@ -11,14 +11,12 @@ class SearchDetallePage extends GetView<SearchsController> {
   Widget build(BuildContext context) {
     return Scaffold(
         //Obx(() => Text(controller.searchQuery.value)
-        appBar: AppBar(
-            backgroundColor: Colors.amberAccent,
-            title: Obx(() {
-              final searchQuery = controller.searchQuery.value;
-              return searchQuery.isNotEmpty
-                  ? BuscadorPage(searchQuery)
-                  : BuscadorPage('Buscar...');
-            })),
+        appBar: AppBar(title: Obx(() {
+          final searchQuery = controller.searchQuery.value;
+          return searchQuery.isNotEmpty
+              ? BuscadorPage(searchQuery)
+              : BuscadorPage('Buscar...');
+        })),
         drawer: const DrawerPage(),
         body: Obx(() {
           final searchList = controller.searchList;

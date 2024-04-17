@@ -1,12 +1,18 @@
 part of './app_pages.dart';
 
 abstract class Routes {
-  static const HOME = '/home';
-  static const CONTADOR = '/contador';
-  static const CATEGORY = '/category';
-  static const SEARCH = '/search';
-  static const SEARCH_DETALLE = '/search-detalle';
-  static const VENTA = '/venta';
-  static const COMPRA = '/compra';
-  static const USER = '/user';
+  static const home = '/home';
+  static const contador = '/contador';
+  static const category = '/category';
+  static const search = '/search';
+  static const searchDetalle = '/search-detalle';
+  static const venta = '/venta';
+  static const compra = '/compra';
+  static const user = '/user';
+  static const guiaTalla = '/guia-talla';
+  static const caracteristicas = '/caracteristicas';
+  static const direcciones = '/direcciones';
+  static const addDirecciones = '/add-direccion';
+  static const metodoEntrega = '/metodo-entrega';
+  static const confirmarCompra = '/confirmar-compra';
 }
