@@ -8,7 +8,7 @@ void main() async {
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
     theme: appThemeData,
-    initialRoute: Routes.HOME,
+    initialRoute: Routes.home,
     initialBinding: HomeBinding(),
     defaultTransition: Transition.native,
     getPages: AppPages.pages,
