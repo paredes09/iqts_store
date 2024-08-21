@@ -4,9 +4,9 @@ import 'package:iqts_store/src/bindings/compra_buiding.dart';
 import 'package:iqts_store/src/bindings/contador_binding.dart';
 import 'package:iqts_store/src/bindings/search_bindings.dart';
 import 'package:iqts_store/src/bindings/user_binding.dart';
-import 'package:iqts_store/src/bindings/venta_bindings.dart';
 import 'package:iqts_store/ui/views/category/pages/category_page.dart';
 import 'package:iqts_store/ui/views/compras/pages/compra_page.dart';
+import 'package:iqts_store/ui/views/compras/pages/estado_compra_page.dart';
 import 'package:iqts_store/ui/views/contador/pages/contador_page.dart';
 import 'package:iqts_store/ui/views/detalles_productos/pages/caracteristicas_page.dart';
 import 'package:iqts_store/ui/views/detalles_productos/pages/confirmar_compra_page.dart';
@@ -18,7 +18,7 @@ import 'package:iqts_store/ui/views/searcher/page/search_page.dart';
 import 'package:iqts_store/ui/views/usuario/pages/configuraciones/agregar_direcciones.dart';
 import 'package:iqts_store/ui/views/usuario/pages/configuraciones/direcciones.dart';
 import 'package:iqts_store/ui/views/usuario/pages/user_page.dart';
-import 'package:iqts_store/ui/views/vender/pages/venta_page.dart';
+
 part './app_routes.dart';
 
 abstract class AppPages {
@@ -42,11 +42,7 @@ abstract class AppPages {
         name: Routes.search,
         page: () => const SearchPage(),
         binding: SearchBinding()),
-    GetPage(
-        name: Routes.venta,
-        page: () => const VentaPage(),
-        binding: VentaBinding()),
-    GetPage(
+      GetPage(
         name: Routes.compra,
         page: () => const CompraPage(),
         binding: CompraBinding()),
@@ -86,6 +82,11 @@ abstract class AppPages {
         transitionDuration: const Duration(milliseconds: 300),
         transition: Transition.rightToLeft,
         name: Routes.confirmarCompra,
-        page: () => const ConfirmarCompraPage())
+        page: () => const ConfirmarCompraPage()),
+    GetPage(
+        name: Routes.estadoCompra,
+        transitionDuration: const Duration(milliseconds: 300),
+        transition: Transition.rightToLeft,
+        page: () => const EstadoCompraPage())
   ];
 }

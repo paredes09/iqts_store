@@ -32,9 +32,11 @@ class UserPage extends GetView<UserController> {
                     child: Text('Compras'),
                   ),
                   listTitleOpciones(
-                      'Mis compras', const Icon(Icons.shopping_bag)),
+                      'Mis compras', const Icon(Icons.shopping_bag), () {
+                    Get.toNamed('/compra');
+                  }),
                   listTitleOpciones(
-                      'Mis devoluciones', const Icon(Icons.refresh)),
+                      'Mis devoluciones', const Icon(Icons.refresh), () {}),
                 ],
               ),
               const Divider(
@@ -47,10 +49,13 @@ class UserPage extends GetView<UserController> {
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                     child: Text('Ventas'),
                   ),
-                  listTitleOpciones('Resumen', const Icon(Icons.summarize)),
                   listTitleOpciones(
-                      'Publicaciones', const Icon(Icons.sell_rounded)),
-                  listTitleOpciones('Ventas', const Icon(Icons.store)),
+                      'Resumen', const Icon(Icons.summarize), () {}),
+                  listTitleOpciones(
+                      'Publicaciones', const Icon(Icons.sell_rounded), () {}),
+                  listTitleOpciones('Ventas', const Icon(Icons.store), () {
+                    Get.toNamed('/venta');
+                  }),
                 ],
               ),
               const Divider(
@@ -64,14 +69,13 @@ class UserPage extends GetView<UserController> {
                     child: Text('Configuración'),
                   ),
                   listTitleOpciones(
-                      'Datos personales', const Icon(Icons.person)),
+                      'Datos personales', const Icon(Icons.person), () {}),
                   listTitleOpciones(
-                      'Direcciones', const Icon(Icons.location_on)),
+                      'Direcciones', const Icon(Icons.location_on), () {
+                    Get.toNamed('/direcciones');
+                  }),
                   listTitleOpciones(
-                      'Métodos de pago', const Icon(Icons.payment)),
-                  listTitleOpciones(
-                      'Notificaciones', const Icon(Icons.notifications)),
-                  listTitleOpciones('Seguridad', const Icon(Icons.security)),
+                      'Seguridad', const Icon(Icons.security), () {}),
                 ],
               ),
             ],

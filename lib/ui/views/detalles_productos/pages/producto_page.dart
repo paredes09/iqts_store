@@ -8,8 +8,8 @@ import 'package:iqts_store/ui/global/botones/favorite.dart';
 import 'package:iqts_store/ui/global/botones/share.dart';
 import 'package:iqts_store/ui/global/widgets/buscador.dart';
 import 'package:iqts_store/ui/global/widgets/drawer.dart';
-import 'package:iqts_store/ui/views/detalles_productos/componentes/bottonDetalles.dart';
-import 'package:iqts_store/ui/views/detalles_productos/componentes/showModalBottonSheet.dart';
+import 'package:iqts_store/ui/views/detalles_productos/componentes/botton_detalles.dart';
+import 'package:iqts_store/ui/views/detalles_productos/componentes/show_modal_botton_sheet.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProductoPage extends GetView<ProductoController> {
@@ -37,10 +37,16 @@ class ProductoPage extends GetView<ProductoController> {
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         appBar: AppBar(
-            //backgroundColor: Colors.amberAccent,
-            title: BuscadorPage(
-          'Buscar en IQTS Store',
-        )),
+          //backgroundColor: Colors.amberAccent,
+          title: BuscadorPage(
+            'Buscar en IQTS Store',
+          ),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.shopping_cart_outlined))
+          ],
+        ),
         drawer: const DrawerPage(),
         body: ListView(
           children: [
@@ -134,7 +140,7 @@ class ProductoPage extends GetView<ProductoController> {
                     const SizedBox(
                       height: 20,
                     ),
-                    BottonShet(images.length, context),
+                    bottonShet(images.length, context),
                     const SizedBox(
                       height: 30,
                     ),

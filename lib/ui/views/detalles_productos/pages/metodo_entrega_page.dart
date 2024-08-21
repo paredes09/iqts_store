@@ -72,7 +72,9 @@ class MetodoEntregaPage extends GetView {
                     ), */
                     InkWell(
                       borderRadius: BorderRadius.circular(8),
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed('/confirmar-compra');
+                      },
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundColor: Colors.grey[200],

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:iqts_store/src/routes/app_pages.dart';
 
-InkWell listTitleOpciones(String titulo, Icon icono) {
+InkWell listTitleOpciones(String titulo, Icon icono, Function()? pressionar) {
   return InkWell(
-    onTap: () => Get.toNamed(Routes.direcciones),
+    onTap: pressionar,
     child: Container(
       margin: const EdgeInsets.only(left: 20, right: 20, top: 7, bottom: 7),
       child: Center(
