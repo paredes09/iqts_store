@@ -1,46 +1,62 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 class DrawerPage extends GetView {
   const DrawerPage({super.key});
   @override
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> iconName = [
-      {'icon': Icons.home_outlined, 'name': 'Inicio', 'route': "/home"},
-      {'icon': Icons.search, 'name': 'Buscar', 'route': "/search"},
       {
-        'icon': Icons.notifications_none_outlined,
+        'icon': HugeIcons.strokeRoundedHome11,
+        'name': 'Inicio',
+        'route': "/home"
+      },
+      {
+        'icon': HugeIcons.strokeRoundedSearch02,
+        'name': 'Buscar',
+        'route': "/search"
+      },
+      {
+        'icon': HugeIcons.strokeRoundedNotification02,
         'name': 'Notificaciones',
         'route': "/search"
       },
       {
-        'icon': Icons.local_grocery_store_outlined,
+        'icon': HugeIcons.strokeRoundedShoppingBag03,
         'name': 'Mis compras',
         'route': "/compra"
       },
-      {'icon': Icons.favorite_border, 'name': 'Favoritos', 'route': "/search"},
       {
-        'icon': Icons.account_circle_outlined,
+        'icon': HugeIcons.strokeRoundedFavourite,
+        'name': 'Favoritos',
+        'route': "/search"
+      },
+      {
+        'icon': HugeIcons.strokeRoundedUserSharing,
         'name': 'Mi cuenta',
         'route': "/user"
       },
       {
-        'icon': Icons.article_outlined,
+        'icon': HugeIcons.strokeRoundedLeftToRightListTriangle,
         'name': 'Categoria',
         'route': "/category"
       },
       {
-        'icon': Icons.book_outlined,
+        'icon': HugeIcons.strokeRoundedBook02,
         'name': 'Libro de Reclamaciones',
         'route': "/direcciones"
       },
       {
-        'icon': Icons.settings_outlined,
-        'name': 'Configuraciones',
-        'route': "/user"
+        'icon': HugeIcons.strokeRoundedCustomerSupport,
+        'name': 'Ayuda',
+        'route': "/search"
       },
-      {'icon': Icons.help_outline, 'name': 'Ayuda', 'route': "/search"},
-      {'icon': Icons.logout, 'name': 'Cerrar sesión', 'route': "/search"}
+      {
+        'icon': HugeIcons.strokeRoundedLogout04,
+        'name': 'Cerrar sesión',
+        'route': "/search"
+      }
     ];
 
     return Drawer(
@@ -154,12 +170,15 @@ class DrawerPage extends GetView {
           } else {
             final item = iconName[index - 1];
             return ListTile(
-              leading: Icon(
-                item['icon'],
+              leading: HugeIcon(
+                icon: item['icon'],
                 color: Colors.black87,
               ),
               title: Text(item['name'],
-                  style: const TextStyle(color: Colors.black87)),
+                  style: const TextStyle(
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13)),
               onTap: () {
                 Get.toNamed(item['route']);
               },

@@ -11,25 +11,17 @@ final ThemeData appThemeData = ThemeData(
   ),
   iconButtonTheme: const IconButtonThemeData(
       style: ButtonStyle(
-          iconColor: MaterialStatePropertyAll(Colors.black87),
-          overlayColor: MaterialStatePropertyAll(Colors.transparent))),
+          iconColor: WidgetStatePropertyAll(Colors.black87),
+          overlayColor: WidgetStatePropertyAll(Colors.transparent))),
   textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
-    overlayColor: MaterialStateProperty.resolveWith<Color?>(
-      (Set<MaterialState> states) {
+    overlayColor: WidgetStateProperty.resolveWith<Color?>(
+      (Set<WidgetState> states) {
         return Colors.transparent;
       },
     ),
-    foregroundColor: const MaterialStatePropertyAll(
+    foregroundColor: const WidgetStatePropertyAll(
       Colors.blue,
     ),
   )),
-  /* elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-          foregroundColor: const MaterialStatePropertyAll(Colors.black54),
-          backgroundColor: MaterialStatePropertyAll(Colors.blue.shade900))),
-  fontFamily: 'HelveticaNeue',
-  textTheme: const TextTheme(
-    displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-  ), */
 );

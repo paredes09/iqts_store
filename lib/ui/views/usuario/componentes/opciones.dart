@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 
-InkWell listTitleOpciones(String titulo, Icon icono, Function()? pressionar) {
+InkWell listTitleOpciones(
+    String titulo, HugeIcon icono, Function()? pressionar, Color? color) {
   return InkWell(
     onTap: pressionar,
     child: Container(
@@ -10,7 +12,7 @@ InkWell listTitleOpciones(String titulo, Icon icono, Function()? pressionar) {
           children: [
             CircleAvatar(
               radius: 18,
-              backgroundColor: Colors.grey[200],
+              backgroundColor: color ?? Colors.blue.shade500,
               child: icono,
             ),
             const SizedBox(
@@ -23,3 +25,7 @@ InkWell listTitleOpciones(String titulo, Icon icono, Function()? pressionar) {
     ),
   );
 }
+
+
+
+

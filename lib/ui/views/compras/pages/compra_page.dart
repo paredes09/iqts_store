@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:iqts_store/src/controllers/compra_controllers.dart';
 import 'package:iqts_store/ui/views/compras/componentes/buscador_compra.dart';
 import 'package:iqts_store/ui/views/compras/componentes/tarjeta_compra.dart';
@@ -30,10 +31,12 @@ class CompraPage extends GetView<CompraController> {
                       ),
                       TextButton.icon(
                           style: const ButtonStyle(
-                              padding:
-                                  MaterialStatePropertyAll(EdgeInsets.zero)),
+                              padding: WidgetStatePropertyAll(EdgeInsets.zero)),
                           onPressed: () {},
-                          icon: const Icon(Icons.filter_alt_outlined),
+                          icon: const HugeIcon(
+                              size: 18,
+                              icon: HugeIcons.strokeRoundedFilterHorizontal,
+                              color: Colors.blue),
                           label: const Text('Filtrar'))
                     ],
                   ),

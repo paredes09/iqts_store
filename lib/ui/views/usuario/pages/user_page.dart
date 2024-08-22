@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:iqts_store/src/controllers/user_controllers.dart';
 import 'package:iqts_store/ui/global/botones/elevate.dart';
 import 'package:iqts_store/ui/views/usuario/componentes/opciones.dart';
@@ -32,30 +33,26 @@ class UserPage extends GetView<UserController> {
                     child: Text('Compras'),
                   ),
                   listTitleOpciones(
-                      'Mis compras', const Icon(Icons.shopping_bag), () {
+                      'Mis compras',
+                      const HugeIcon(
+                          icon: HugeIcons.strokeRoundedShoppingBag01,
+                          color: Colors.white), () {
                     Get.toNamed('/compra');
-                  }),
+                  }, null),
                   listTitleOpciones(
-                      'Mis devoluciones', const Icon(Icons.refresh), () {}),
-                ],
-              ),
-              const Divider(
-                thickness: 1,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    child: Text('Ventas'),
-                  ),
+                      'Preguntas',
+                      const HugeIcon(
+                          icon: HugeIcons.strokeRoundedComment02,
+                          color: Colors.white),
+                      () {},
+                      null),
                   listTitleOpciones(
-                      'Resumen', const Icon(Icons.summarize), () {}),
-                  listTitleOpciones(
-                      'Publicaciones', const Icon(Icons.sell_rounded), () {}),
-                  listTitleOpciones('Ventas', const Icon(Icons.store), () {
-                    Get.toNamed('/venta');
-                  }),
+                      'Mis opiniones',
+                      const HugeIcon(
+                          icon: HugeIcons.strokeRoundedStar,
+                          color: Colors.white),
+                      () {},
+                      null),
                 ],
               ),
               const Divider(
@@ -69,13 +66,48 @@ class UserPage extends GetView<UserController> {
                     child: Text('Configuración'),
                   ),
                   listTitleOpciones(
-                      'Datos personales', const Icon(Icons.person), () {}),
+                      'Mi perfil',
+                      const HugeIcon(
+                          icon: HugeIcons.strokeRoundedUser,
+                          color: Colors.black),
+                      () {},
+                      Colors.grey[200]),
                   listTitleOpciones(
-                      'Direcciones', const Icon(Icons.location_on), () {
+                      'Direcciones',
+                      const HugeIcon(
+                          icon: HugeIcons.strokeRoundedMosqueLocation,
+                          color: Colors.black), () {
                     Get.toNamed('/direcciones');
-                  }),
+                  }, Colors.grey[200]),
                   listTitleOpciones(
-                      'Seguridad', const Icon(Icons.security), () {}),
+                      'Ajustes',
+                      const HugeIcon(
+                          icon: HugeIcons.strokeRoundedSettings02,
+                          color: Colors.black),
+                      () {},
+                      Colors.grey[200]),
+                  listTitleOpciones(
+                      'Ayuda',
+                      const HugeIcon(
+                          icon: HugeIcons.strokeRoundedCustomerSupport,
+                          color: Colors.black),
+                      () {},
+                      Colors.grey[200]),
+                ],
+              ),
+              const Divider(
+                thickness: 1,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  listTitleOpciones(
+                      'Cerrar sesión',
+                      const HugeIcon(
+                          icon: HugeIcons.strokeRoundedLogout04,
+                          color: Colors.black),
+                      () {},
+                      Colors.grey[200]),
                 ],
               ),
             ],

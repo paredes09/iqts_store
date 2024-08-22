@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:iqts_store/ui/global/botones/text_global_button.dart';
 
@@ -46,7 +45,6 @@ SizedBox tarjetaEstadoCompra() {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
                             border: Border.all(color: Colors.black12),
-                            color: Colors.amber,
                             image: const DecorationImage(
                                 image: AssetImage('assets/ejemplo.webp'))),
                         height: 70,

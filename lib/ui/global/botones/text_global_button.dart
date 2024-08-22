@@ -4,7 +4,7 @@ TextButton globalTextButton(Function()? onpress, String texto) {
   return TextButton(
     onPressed: () {},
     style: const ButtonStyle(
-      padding: MaterialStatePropertyAll(EdgeInsets.zero),
+      padding: WidgetStatePropertyAll(EdgeInsets.zero),
     ),
     child: Text(
       texto,

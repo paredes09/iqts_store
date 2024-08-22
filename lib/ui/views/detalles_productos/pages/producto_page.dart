@@ -1,6 +1,7 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart' as slider;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:iqts_store/src/controllers/producto_controller.dart';
 import 'package:iqts_store/src/routes/app_pages.dart';
 import 'package:iqts_store/ui/global/botones/elevate.dart';
@@ -41,10 +42,34 @@ class ProductoPage extends GetView<ProductoController> {
           title: BuscadorPage(
             'Buscar en IQTS Store',
           ),
+          bottom: PreferredSize(
+              preferredSize: const Size.fromHeight(30),
+              child: Container(
+                padding: const EdgeInsets.only(left: 20, bottom: 10),
+                child: const Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    HugeIcon(
+                        size: 15,
+                        icon: HugeIcons.strokeRoundedLocation04,
+                        color: Colors.black),
+                    SizedBox(width: 10),
+                    Text('Calle Loreto 679',
+                        style: TextStyle(
+                            fontSize: 13, fontWeight: FontWeight.w400)),
+                    HugeIcon(
+                        size: 15,
+                        icon: HugeIcons.strokeRoundedArrowRight01,
+                        color: Colors.black)
+                  ],
+                ),
+              )),
           actions: [
             IconButton(
                 onPressed: () {},
-                icon: const Icon(Icons.shopping_cart_outlined))
+                icon: const HugeIcon(
+                    icon: HugeIcons.strokeRoundedShoppingCart02,
+                    color: Colors.black))
           ],
         ),
         drawer: const DrawerPage(),
@@ -78,8 +103,8 @@ class ProductoPage extends GetView<ProductoController> {
               margin: const EdgeInsets.only(top: 10, bottom: 20),
               child: Stack(
                 children: [
-                  CarouselSlider(
-                    options: CarouselOptions(
+                  slider.CarouselSlider(
+                    options: slider.CarouselOptions(
                         enableInfiniteScroll: false,
                         onPageChanged: controller.onCarouselPageChanged,
                         enlargeCenterPage: false,
