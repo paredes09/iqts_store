@@ -6,10 +6,6 @@ SizedBox tarjetaEstadoCompra() {
   return SizedBox(
     width: double.infinity,
     child: Card(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5.0),
-        ),
         child: Column(
           children: [
             Padding(

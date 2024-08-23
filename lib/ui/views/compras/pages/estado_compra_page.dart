@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hugeicons/hugeicons.dart';
+import 'package:iqts_store/ui/global/botones/text_global_button.dart';
+import 'package:iqts_store/ui/views/compras/componentes/tarjeta_ayuda_compra.dart';
+import 'package:iqts_store/ui/views/compras/componentes/tarjeta_estado_compra.dart';
 
 class EstadoCompraPage extends GetView {
   const EstadoCompraPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,39 +15,30 @@ class EstadoCompraPage extends GetView {
         ),
         body: SafeArea(
             child: Container(
-          color: const Color.fromARGB(255, 232, 227, 227),
+          color: const Color.fromARGB(255, 247, 241, 241),
           height: MediaQuery.of(context).size.height,
           width: double.infinity,
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.only(
+                    top: 20, left: 15, right: 15, bottom: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const Expanded(
+                    Expanded(
                       child: SizedBox(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                                 'Peluche de unicornio x1 - S/ 50.00 sin envíosdsdsdsdsdasdsadasd',
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 1,
                                 style: TextStyle(fontWeight: FontWeight.bold)),
                             SizedBox(
                                 height: 15,
-                                child: TextButton(
-                                  onPressed: null,
-                                  style: ButtonStyle(
-                                    padding:
-                                        WidgetStatePropertyAll(EdgeInsets.zero),
-                                  ),
-                                  child: Text(
-                                    'Ver detalle',
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                )),
+                                child: globalTextButton(null, 'Ver detalles')),
                           ],
                         ),
                       ),
@@ -55,42 +49,68 @@ class EstadoCompraPage extends GetView {
                     Container(
                       height: 50,
                       width: 50,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          border: Border.all(color: Colors.black12),
-                          color: Colors.amber,
-                          image: const DecorationImage(
+                          image: DecorationImage(
                               image: AssetImage('assets/ejemplo.webp'))),
                     )
                   ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Row(
                   children: [
                     Icon(Icons.star_outlined,
-                        size: 16, color: Colors.blue.shade700),
+                        size: 18, color: Colors.blue.shade700),
                     Icon(Icons.star_outlined,
-                        size: 16, color: Colors.blue.shade700),
+                        size: 18, color: Colors.blue.shade700),
                     Icon(Icons.star_outlined,
-                        size: 16, color: Colors.blue.shade700),
+                        size: 18, color: Colors.blue.shade700),
                     const SizedBox(
                       width: 10,
                     ),
-                    const SizedBox(
+                    SizedBox(
                         height: 15,
-                        child: TextButton(
-                          onPressed: null,
-                          style: ButtonStyle(
-                            padding: WidgetStatePropertyAll(EdgeInsets.zero),
-                          ),
-                          child: Text(
-                            'Editar opinión',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        )),
+                        child: globalTextButton(null, 'Editar opinión')),
                   ],
+                ),
+              ),
+              Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: tarjetaDetalleEstadoCompra()),
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: tarjetaAyudaCompra()),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(5),
+                    onTap: () => Get.toNamed('/contacto'),
+                    child: const Padding(
+                      padding: EdgeInsets.all(12.0),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('Contacta con nosotros',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15)),
+                            HugeIcon(
+                                icon: HugeIcons.strokeRoundedArrowRight01,
+                                color: Colors.black),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               )
             ],

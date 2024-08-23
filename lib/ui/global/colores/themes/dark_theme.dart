@@ -9,6 +9,12 @@ final ThemeData appThemeData = ThemeData(
     textColor: Colors.black54,
     iconColor: Colors.black54,
   ),
+  cardTheme: CardTheme(
+    color: Colors.white,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(5.0),
+    ),
+  ),
   iconButtonTheme: const IconButtonThemeData(
       style: ButtonStyle(
           iconColor: WidgetStatePropertyAll(Colors.black87),

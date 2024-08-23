@@ -12,7 +12,7 @@ class CompraPage extends GetView<CompraController> {
     return Scaffold(
         appBar: AppBar(title: const Text('Mis compras')),
         body: Container(
-          color: const Color.fromARGB(255, 232, 227, 227),
+          color: const Color.fromARGB(255, 247, 241, 241),
           height: double.infinity,
           width: double.infinity,
           child: Column(

@@ -8,7 +8,7 @@ TextButton globalTextButton(Function()? onpress, String texto) {
     ),
     child: Text(
       texto,
-      style: const TextStyle(fontSize: 11),
+      style: const TextStyle(fontSize: 12),
     ),
   );
 }
