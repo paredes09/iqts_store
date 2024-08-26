@@ -5,6 +5,7 @@ final ThemeData appThemeData = ThemeData(
     backgroundColor: Colors.yellow,
     titleTextStyle: TextStyle(color: Colors.black),
   ),
+  scaffoldBackgroundColor: Colors.white,
   listTileTheme: const ListTileThemeData(
     textColor: Colors.black54,
     iconColor: Colors.black54,

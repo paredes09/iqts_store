@@ -8,10 +8,10 @@ class DireccionesPage extends GetView {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 243, 243, 243),
       appBar: AppBar(title: const Text('Mis datos')),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
-        color: const Color.fromARGB(255, 221, 220, 220),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(

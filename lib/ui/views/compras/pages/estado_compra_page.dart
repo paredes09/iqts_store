@@ -90,7 +90,7 @@ class EstadoCompraPage extends GetView {
                   ),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(5),
-                    onTap: () => Get.toNamed('/contacto'),
+                    onTap: () => Get.toNamed('/detalle-compra'),
                     child: const Padding(
                       padding: EdgeInsets.all(12.0),
                       child: SizedBox(
@@ -98,7 +98,7 @@ class EstadoCompraPage extends GetView {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Contacta con nosotros',
+                            Text('Detalle de la compra',
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,

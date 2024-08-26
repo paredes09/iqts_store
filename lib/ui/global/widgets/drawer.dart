@@ -55,7 +55,7 @@ class DrawerPage extends GetView {
       {
         'icon': HugeIcons.strokeRoundedLogout04,
         'name': 'Cerrar sesión',
-        'route': "/search"
+        'route': "/login-principal"
       }
     ];
 

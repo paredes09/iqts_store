@@ -6,6 +6,7 @@ import 'package:iqts_store/src/bindings/search_bindings.dart';
 import 'package:iqts_store/src/bindings/user_binding.dart';
 import 'package:iqts_store/ui/views/category/pages/category_page.dart';
 import 'package:iqts_store/ui/views/compras/pages/compra_page.dart';
+import 'package:iqts_store/ui/views/compras/pages/detalle_compra_page.dart';
 import 'package:iqts_store/ui/views/compras/pages/estado_compra_page.dart';
 import 'package:iqts_store/ui/views/contador/pages/contador_page.dart';
 import 'package:iqts_store/ui/views/detalles_productos/pages/caracteristicas_page.dart';
@@ -13,6 +14,7 @@ import 'package:iqts_store/ui/views/detalles_productos/pages/confirmar_compra_pa
 import 'package:iqts_store/ui/views/detalles_productos/pages/guia_talla_page.dart';
 import 'package:iqts_store/ui/views/detalles_productos/pages/metodo_entrega_page.dart';
 import 'package:iqts_store/ui/views/home/pages/home_page.dart';
+import 'package:iqts_store/ui/views/login/pages/login_page_principal.dart';
 import 'package:iqts_store/ui/views/searcher/page/search_detalle_page.dart';
 import 'package:iqts_store/ui/views/searcher/page/search_page.dart';
 import 'package:iqts_store/ui/views/usuario/pages/configuraciones/agregar_direcciones.dart';
@@ -42,7 +44,7 @@ abstract class AppPages {
         name: Routes.search,
         page: () => const SearchPage(),
         binding: SearchBinding()),
-      GetPage(
+    GetPage(
         name: Routes.compra,
         page: () => const CompraPage(),
         binding: CompraBinding()),
@@ -87,6 +89,16 @@ abstract class AppPages {
         name: Routes.estadoCompra,
         transitionDuration: const Duration(milliseconds: 300),
         transition: Transition.rightToLeft,
-        page: () => const EstadoCompraPage())
+        page: () => const EstadoCompraPage()),
+    GetPage(
+        name: Routes.detalleCompra,
+        page: () => DetalleCompraPage(),
+        transition: Transition.rightToLeft,
+        transitionDuration: const Duration(milliseconds: 300)),
+    GetPage(
+        name: Routes.logiPrincipal,
+        page: () => const LoginPrincipalPage(),
+        transition: Transition.rightToLeft,
+        transitionDuration: const Duration(milliseconds: 300)),
   ];
 }
