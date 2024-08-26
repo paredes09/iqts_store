@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "794763581885",
+    "project_id": "loginappiquitosstore",
+    "storage_bucket": "loginappiquitosstore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794763581885:android:7213efeb817db21f539ad4",
+        "android_client_info": {
+          "package_name": "com.example.iqts_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794763581885-f25slkmdk9p0j4ikshprm7mgn8sn3bbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD48UTQEHbWNVsb1dg8k0bnCPQKAG6OyU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794763581885-f25slkmdk9p0j4ikshprm7mgn8sn3bbj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "794763581885-n3i0b51ub1sjh47nntmk1j6i7m01c895.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.iqtsStore"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

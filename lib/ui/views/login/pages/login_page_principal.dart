@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iqts_store/ui/views/login/components/credenciales_login.dart';
 
 class LoginPrincipalPage extends GetView {
   const LoginPrincipalPage({super.key});
@@ -69,7 +70,9 @@ class LoginPrincipalPage extends GetView {
                   height: 30,
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () async {
+                    await signInWithGoogle();
+                  },
                   child: Container(
                       width: double.infinity,
                       height: 55,
