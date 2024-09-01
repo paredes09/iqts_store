@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iqts_store/ui/global/botones/elevate.dart';
 
 Card tarjetaDetalleEstadoCompra() {
@@ -51,7 +52,11 @@ Card tarjetaDetalleEstadoCompra() {
             const Divider(),
             Padding(
               padding: const EdgeInsets.all(18.0),
-              child: elevateButton('Volver a Comprar', '/compra'),
+              child: elevateButton(
+                  'Volver a Comprar',
+                  () => {
+                        Get.toNamed('/compra'),
+                      }),
             ),
           ],
         ),

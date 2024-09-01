@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-InkWell elevateButton(String texto, String ruta) {
+InkWell elevateButton(String texto, Function()? onPressed) {
   return InkWell(
     borderRadius: BorderRadius.circular(5),
-    onTap: () => {
-      Get.toNamed(ruta),
-    },
+    onTap: onPressed,
     child: Container(
       height: 50,
       decoration: BoxDecoration(

@@ -28,7 +28,8 @@ abstract class AppPages {
     GetPage(
       name: Routes.home,
       page: () => const HomePage(),
-      transition: Transition.native,
+      transition: Transition.upToDown,
+      transitionDuration: const Duration(milliseconds: 300),
     ),
     GetPage(
       name: Routes.contador,
@@ -98,7 +99,7 @@ abstract class AppPages {
     GetPage(
         name: Routes.logiPrincipal,
         page: () => const LoginPrincipalPage(),
-        transition: Transition.rightToLeft,
+        transition: Transition.downToUp,
         transitionDuration: const Duration(milliseconds: 300)),
   ];
 }

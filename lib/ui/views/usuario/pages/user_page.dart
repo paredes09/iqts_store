@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hugeicons/hugeicons.dart';
-import 'package:iqts_store/src/controllers/user_controllers.dart';
+import 'package:iqts_store/src/controllers/login_controllers.dart';
 import 'package:iqts_store/ui/global/botones/elevate.dart';
+import 'package:iqts_store/ui/views/usuario/componentes/cerrar_sesion_modal.dart';
 import 'package:iqts_store/ui/views/usuario/componentes/opciones.dart';
 
-class UserPage extends GetView<UserController> {
+class UserPage extends GetView<LoginController> {
   const UserPage({super.key});
 
   @override
@@ -21,7 +22,11 @@ class UserPage extends GetView<UserController> {
               Container(
                   margin:
                       const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-                  child: elevateButton('Vender', '/metodo-entrega')),
+                  child: elevateButton(
+                      'Comprar',
+                      () => {
+                            Get.offAllNamed('/home'),
+                          })),
               const Divider(
                 thickness: 1,
               ),
@@ -105,9 +110,13 @@ class UserPage extends GetView<UserController> {
                       'Cerrar sesión',
                       const HugeIcon(
                           icon: HugeIcons.strokeRoundedLogout04,
-                          color: Colors.black),
-                      () {},
-                      Colors.grey[200]),
+                          color: Colors.black), () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return modalCerrarSesion();
+                        });
+                  }, Colors.grey[200]),
                 ],
               ),
             ],

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
-import 'package:iqts_store/ui/views/login/components/credenciales_login.dart';
+import 'package:iqts_store/src/controllers/login_controllers.dart';
 
-class LoginPrincipalPage extends GetView {
+class LoginPrincipalPage extends GetView<LoginController> {
   const LoginPrincipalPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,19 +59,28 @@ class LoginPrincipalPage extends GetView {
                         fit: BoxFit.contain),
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
                 const Text(
                   'Bienvenido a la aplicación de compras en línea.',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                 ),
+                SizedBox(
+                    height: 50,
+                    child: Obx(() => controller.isLogged.value
+                        ? const SpinKitSquareCircle(
+                            color: Colors.yellow,
+                            size: 50.0,
+                          )
+                        : const SizedBox())),
                 const SizedBox(
                   height: 30,
                 ),
                 InkWell(
                   onTap: () async {
-                    await signInWithGoogle();
+                    await controller.signInWithGoogle();
+                    if (controller.user.value != null) {
+                      await Future.delayed(const Duration(milliseconds: 100));
+                      Get.offAllNamed(Get.previousRoute);
+                    }
                   },
                   child: Container(
                       width: double.infinity,

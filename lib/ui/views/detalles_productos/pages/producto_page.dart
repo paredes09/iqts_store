@@ -169,7 +169,9 @@ class ProductoPage extends GetView<ProductoController> {
                     const SizedBox(
                       height: 30,
                     ),
-                    elevateButton('Comprar ahora', '/metodo-entrega'),
+                    elevateButton('Comprar ahora', () {
+                      Get.toNamed('/metodo-entrega');
+                    }),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

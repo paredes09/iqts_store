@@ -99,7 +99,7 @@ class ConfirmarCompraPage extends GetView {
                           const SizedBox(
                             height: 30,
                           ),
-                          elevateButton('Confirmar compra', 'ruta'),
+                          elevateButton('Confirmar compra', () {}),
                         ],
                       ),
                     ),
@@ -128,8 +128,9 @@ class ConfirmarCompraPage extends GetView {
                       Padding(
                         padding: const EdgeInsets.only(
                             bottom: 30, top: 15, left: 20, right: 20),
-                        child: elevateButton(
-                            'confirmar Compra', '/confirmar-compra'),
+                        child: elevateButton('confirmar Compra', () {
+                          Get.toNamed('/confirmar-compra');
+                        }),
                       )
                     ],
                   );
