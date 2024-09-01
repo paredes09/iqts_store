@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:iqts_store/src/routes/app_pages.dart';
+import 'package:hugeicons/hugeicons.dart';
 
-InkWell listTitleOpciones(String titulo, Icon icono) {
+InkWell listTitleOpciones(
+    String titulo, HugeIcon icono, Function()? pressionar, Color? color) {
   return InkWell(
-    onTap: () => Get.toNamed(Routes.direcciones),
+    onTap: pressionar,
     child: Container(
       margin: const EdgeInsets.only(left: 20, right: 20, top: 7, bottom: 7),
       child: Center(
@@ -12,7 +12,7 @@ InkWell listTitleOpciones(String titulo, Icon icono) {
           children: [
             CircleAvatar(
               radius: 18,
-              backgroundColor: Colors.grey[200],
+              backgroundColor: color ?? Colors.blue.shade500,
               child: icono,
             ),
             const SizedBox(
@@ -25,3 +25,7 @@ InkWell listTitleOpciones(String titulo, Icon icono) {
     ),
   );
 }
+
+
+
+

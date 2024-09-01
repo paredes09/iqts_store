@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iqts_store/ui/views/usuario/componentes/direcciones_card.dart';
 
 class DireccionesPage extends GetView {
   const DireccionesPage({super.key});
@@ -7,10 +8,10 @@ class DireccionesPage extends GetView {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 243, 243, 243),
       appBar: AppBar(title: const Text('Mis datos')),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
-        color: const Color.fromARGB(255, 221, 220, 220),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -26,255 +27,11 @@ class DireccionesPage extends GetView {
               Card(
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          const Icon(Icons.home_outlined),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                'Loreto 479 1',
-                                style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(
-                                width: 230,
-                                height: 50,
-                                child: Wrap(
-                                  direction: Axis.horizontal,
-                                  spacing: 5,
-                                  runSpacing: 5,
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          color: const Color.fromARGB(
-                                              255, 160, 176, 244)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5, vertical: 2),
-                                        child: Text(
-                                          'Ventas',
-                                          style: TextStyle(
-                                              fontSize: 11,
-                                              color: Colors.blue.shade700,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          color: const Color.fromARGB(
-                                              255, 160, 176, 244)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5, vertical: 2),
-                                        child: Text(
-                                          'Domicilio de envios',
-                                          style: TextStyle(
-                                              fontSize: 11,
-                                              color: Colors.blue.shade700,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          color: const Color.fromARGB(
-                                              255, 160, 176, 244)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5, vertical: 2),
-                                        child: Text(
-                                          'Facturación',
-                                          style: TextStyle(
-                                              fontSize: 11,
-                                              color: Colors.blue.shade700,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          color: const Color.fromARGB(
-                                              255, 160, 176, 244)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5, vertical: 2),
-                                        child: Text(
-                                          'Domicilio de devoluciones',
-                                          style: TextStyle(
-                                              fontSize: 11,
-                                              color: Colors.blue.shade700,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const SizedBox(height: 20),
-                              const Text(
-                                'Loreto - Maynas',
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              const Text('aroldo francisco paredes piñeiros',
-                                  style: TextStyle(
-                                      fontSize: 15, color: Colors.grey)),
-                              const Text('935827864',
-                                  style: TextStyle(
-                                      fontSize: 15, color: Colors.grey)),
-                              const SizedBox(height: 20),
-                            ],
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              Get.toNamed('/add-direccion');
-                            },
-                            icon: const Icon(Icons.mode_edit_outline_outlined),
-                          )
-                        ],
-                      ),
-                    ),
+                    cardDireccion('Loreto 479 1', 'Loreto - Maynas',
+                        'aroldo francisco paredes piñeiros', '935827864'),
                     const Divider(),
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          const Icon(Icons.home_outlined),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                'Loreto 479 1',
-                                style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(
-                                width: 230,
-                                height: 50,
-                                child: Wrap(
-                                  direction: Axis.horizontal,
-                                  spacing: 5,
-                                  runSpacing: 5,
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          color: const Color.fromARGB(
-                                              255, 160, 176, 244)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5, vertical: 2),
-                                        child: Text(
-                                          'Ventas',
-                                          style: TextStyle(
-                                              fontSize: 11,
-                                              color: Colors.blue.shade700,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          color: const Color.fromARGB(
-                                              255, 160, 176, 244)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5, vertical: 2),
-                                        child: Text(
-                                          'Domicilio de envios',
-                                          style: TextStyle(
-                                              fontSize: 11,
-                                              color: Colors.blue.shade700,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          color: const Color.fromARGB(
-                                              255, 160, 176, 244)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5, vertical: 2),
-                                        child: Text(
-                                          'Facturación',
-                                          style: TextStyle(
-                                              fontSize: 11,
-                                              color: Colors.blue.shade700,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          color: const Color.fromARGB(
-                                              255, 160, 176, 244)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5, vertical: 2),
-                                        child: Text(
-                                          'Domicilio de devoluciones',
-                                          style: TextStyle(
-                                              fontSize: 11,
-                                              color: Colors.blue.shade700,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const SizedBox(height: 20),
-                              const Text(
-                                'Loreto - Maynas',
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              const Text('aroldo francisco paredes piñeiros',
-                                  style: TextStyle(
-                                      fontSize: 15, color: Colors.grey)),
-                              const Text('935827864',
-                                  style: TextStyle(
-                                      fontSize: 15, color: Colors.grey)),
-                              const SizedBox(height: 20),
-                            ],
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              Get.toNamed('/add-direccion');
-                            },
-                            icon: const Icon(Icons.mode_edit_outline_outlined),
-                          )
-                        ],
-                      ),
-                    ),
+                    cardDireccion('Loreto 479 1', 'Loreto - Maynas',
+                        'aroldo francisco paredes piñeiros', '935827864'),
                     InkWell(
                       borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(13),

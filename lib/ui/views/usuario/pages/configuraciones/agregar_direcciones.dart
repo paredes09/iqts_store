@@ -38,7 +38,9 @@ class AggDireccionesPage extends GetView {
                 const SizedBox(
                   height: 20,
                 ),
-                elevateButton('Guardar', '/metodo-entrega'),
+                elevateButton('Guardar', () {
+                  Get.toNamed('/metodo-entrega');
+                }),
               ],
             ),
           ),

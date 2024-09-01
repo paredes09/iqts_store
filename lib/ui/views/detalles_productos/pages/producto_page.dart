@@ -1,6 +1,7 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart' as slider;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:iqts_store/src/controllers/producto_controller.dart';
 import 'package:iqts_store/src/routes/app_pages.dart';
 import 'package:iqts_store/ui/global/botones/elevate.dart';
@@ -8,8 +9,8 @@ import 'package:iqts_store/ui/global/botones/favorite.dart';
 import 'package:iqts_store/ui/global/botones/share.dart';
 import 'package:iqts_store/ui/global/widgets/buscador.dart';
 import 'package:iqts_store/ui/global/widgets/drawer.dart';
-import 'package:iqts_store/ui/views/detalles_productos/componentes/bottonDetalles.dart';
-import 'package:iqts_store/ui/views/detalles_productos/componentes/showModalBottonSheet.dart';
+import 'package:iqts_store/ui/views/detalles_productos/componentes/botton_detalles.dart';
+import 'package:iqts_store/ui/views/detalles_productos/componentes/show_modal_botton_sheet.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProductoPage extends GetView<ProductoController> {
@@ -37,10 +38,40 @@ class ProductoPage extends GetView<ProductoController> {
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         appBar: AppBar(
-            //backgroundColor: Colors.amberAccent,
-            title: BuscadorPage(
-          'Buscar en IQTS Store',
-        )),
+          //backgroundColor: Colors.amberAccent,
+          title: BuscadorPage(
+            'Buscar en IQTS Store',
+          ),
+          bottom: PreferredSize(
+              preferredSize: const Size.fromHeight(30),
+              child: Container(
+                padding: const EdgeInsets.only(left: 20, bottom: 10),
+                child: const Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    HugeIcon(
+                        size: 15,
+                        icon: HugeIcons.strokeRoundedLocation04,
+                        color: Colors.black),
+                    SizedBox(width: 10),
+                    Text('Calle Loreto 679',
+                        style: TextStyle(
+                            fontSize: 13, fontWeight: FontWeight.w400)),
+                    HugeIcon(
+                        size: 15,
+                        icon: HugeIcons.strokeRoundedArrowRight01,
+                        color: Colors.black)
+                  ],
+                ),
+              )),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: const HugeIcon(
+                    icon: HugeIcons.strokeRoundedShoppingCart02,
+                    color: Colors.black))
+          ],
+        ),
         drawer: const DrawerPage(),
         body: ListView(
           children: [
@@ -72,8 +103,8 @@ class ProductoPage extends GetView<ProductoController> {
               margin: const EdgeInsets.only(top: 10, bottom: 20),
               child: Stack(
                 children: [
-                  CarouselSlider(
-                    options: CarouselOptions(
+                  slider.CarouselSlider(
+                    options: slider.CarouselOptions(
                         enableInfiniteScroll: false,
                         onPageChanged: controller.onCarouselPageChanged,
                         enlargeCenterPage: false,
@@ -134,11 +165,13 @@ class ProductoPage extends GetView<ProductoController> {
                     const SizedBox(
                       height: 20,
                     ),
-                    BottonShet(images.length, context),
+                    bottonShet(images.length, context),
                     const SizedBox(
                       height: 30,
                     ),
-                    elevateButton('Comprar ahora', '/metodo-entrega'),
+                    elevateButton('Comprar ahora', () {
+                      Get.toNamed('/metodo-entrega');
+                    }),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

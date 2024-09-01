@@ -4,21 +4,23 @@ import 'package:iqts_store/src/bindings/compra_buiding.dart';
 import 'package:iqts_store/src/bindings/contador_binding.dart';
 import 'package:iqts_store/src/bindings/search_bindings.dart';
 import 'package:iqts_store/src/bindings/user_binding.dart';
-import 'package:iqts_store/src/bindings/venta_bindings.dart';
 import 'package:iqts_store/ui/views/category/pages/category_page.dart';
 import 'package:iqts_store/ui/views/compras/pages/compra_page.dart';
+import 'package:iqts_store/ui/views/compras/pages/detalle_compra_page.dart';
+import 'package:iqts_store/ui/views/compras/pages/estado_compra_page.dart';
 import 'package:iqts_store/ui/views/contador/pages/contador_page.dart';
 import 'package:iqts_store/ui/views/detalles_productos/pages/caracteristicas_page.dart';
 import 'package:iqts_store/ui/views/detalles_productos/pages/confirmar_compra_page.dart';
 import 'package:iqts_store/ui/views/detalles_productos/pages/guia_talla_page.dart';
 import 'package:iqts_store/ui/views/detalles_productos/pages/metodo_entrega_page.dart';
 import 'package:iqts_store/ui/views/home/pages/home_page.dart';
+import 'package:iqts_store/ui/views/login/pages/login_page_principal.dart';
 import 'package:iqts_store/ui/views/searcher/page/search_detalle_page.dart';
 import 'package:iqts_store/ui/views/searcher/page/search_page.dart';
 import 'package:iqts_store/ui/views/usuario/pages/configuraciones/agregar_direcciones.dart';
 import 'package:iqts_store/ui/views/usuario/pages/configuraciones/direcciones.dart';
 import 'package:iqts_store/ui/views/usuario/pages/user_page.dart';
-import 'package:iqts_store/ui/views/vender/pages/venta_page.dart';
+
 part './app_routes.dart';
 
 abstract class AppPages {
@@ -26,7 +28,8 @@ abstract class AppPages {
     GetPage(
       name: Routes.home,
       page: () => const HomePage(),
-      transition: Transition.native,
+      transition: Transition.upToDown,
+      transitionDuration: const Duration(milliseconds: 300),
     ),
     GetPage(
       name: Routes.contador,
@@ -42,10 +45,6 @@ abstract class AppPages {
         name: Routes.search,
         page: () => const SearchPage(),
         binding: SearchBinding()),
-    GetPage(
-        name: Routes.venta,
-        page: () => const VentaPage(),
-        binding: VentaBinding()),
     GetPage(
         name: Routes.compra,
         page: () => const CompraPage(),
@@ -86,6 +85,21 @@ abstract class AppPages {
         transitionDuration: const Duration(milliseconds: 300),
         transition: Transition.rightToLeft,
         name: Routes.confirmarCompra,
-        page: () => const ConfirmarCompraPage())
+        page: () => const ConfirmarCompraPage()),
+    GetPage(
+        name: Routes.estadoCompra,
+        transitionDuration: const Duration(milliseconds: 300),
+        transition: Transition.rightToLeft,
+        page: () => const EstadoCompraPage()),
+    GetPage(
+        name: Routes.detalleCompra,
+        page: () => DetalleCompraPage(),
+        transition: Transition.rightToLeft,
+        transitionDuration: const Duration(milliseconds: 300)),
+    GetPage(
+        name: Routes.logiPrincipal,
+        page: () => const LoginPrincipalPage(),
+        transition: Transition.downToUp,
+        transitionDuration: const Duration(milliseconds: 300)),
   ];
 }

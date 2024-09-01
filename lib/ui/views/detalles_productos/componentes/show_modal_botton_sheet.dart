@@ -1,9 +1,8 @@
-// ignore_for_file: file_names, non_constant_identifier_names
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iqts_store/ui/global/botones/elevate.dart';
 
-InkWell BottonShet(int images, BuildContext context) {
+InkWell bottonShet(int images, BuildContext context) {
   return InkWell(
     borderRadius: BorderRadius.circular(5),
     onTap: () => {
@@ -140,7 +139,10 @@ InkWell BottonShet(int images, BuildContext context) {
                                                             ),
                                                             elevateButton(
                                                                 'Agregar cantidad',
-                                                                '/metodo-entrega')
+                                                                () => {
+                                                                      Get.toNamed(
+                                                                          '/metodo-entrega'),
+                                                                    })
                                                           ],
                                                         ),
                                                       ),

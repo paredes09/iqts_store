@@ -7,11 +7,11 @@ class MetodoEntregaPage extends GetView {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(title: const Text('Detalles de la compra')),
         body: Container(
           padding: const EdgeInsets.all(15),
           width: double.infinity,
-          color: const Color.fromARGB(255, 247, 245, 245),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -46,9 +46,6 @@ class MetodoEntregaPage extends GetView {
                 height: 10,
               ),
               Card(
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -72,7 +69,9 @@ class MetodoEntregaPage extends GetView {
                     ), */
                     InkWell(
                       borderRadius: BorderRadius.circular(8),
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed('/confirmar-compra');
+                      },
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundColor: Colors.grey[200],
