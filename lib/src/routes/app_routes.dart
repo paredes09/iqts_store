@@ -17,4 +17,5 @@ abstract class Routes {
   static const estadoCompra = '/estado-compra';
   static const detalleCompra = '/detalle-compra';
   static const logiPrincipal = '/login-principal';
+  static const favorito = '/favorito';
 }

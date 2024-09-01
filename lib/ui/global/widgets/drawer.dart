@@ -33,7 +33,7 @@ class DrawerPage extends GetView<LoginController> {
       {
         'icon': HugeIcons.strokeRoundedFavourite,
         'name': 'Favoritos',
-        'route': "/search"
+        'route': "/favorito"
       },
       {
         'icon': HugeIcons.strokeRoundedUserSharing,
@@ -55,14 +55,6 @@ class DrawerPage extends GetView<LoginController> {
         'name': 'Ayuda',
         'route': "/search"
       },
-      /*  if (controller.user.value != null)
-        {
-          'icon': HugeIcons.strokeRoundedLogout04,
-          'name': 'Cerrar sesión',
-          'action': () {
-            controller.signOutGoogle();
-          }
-        } */
     ];
 
     return Drawer(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 final ThemeData appThemeData = ThemeData(
   appBarTheme: const AppBarTheme(
+    surfaceTintColor: Colors.transparent,
     backgroundColor: Colors.yellow,
     titleTextStyle: TextStyle(color: Colors.black),
   ),
@@ -17,9 +18,10 @@ final ThemeData appThemeData = ThemeData(
     ),
   ),
   iconButtonTheme: const IconButtonThemeData(
-      style: ButtonStyle(
+      /*     style: ButtonStyle(
           iconColor: WidgetStatePropertyAll(Colors.black87),
-          overlayColor: WidgetStatePropertyAll(Colors.transparent))),
+          overlayColor: WidgetStatePropertyAll(Colors.transparent)) */
+      ),
   textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
     overlayColor: WidgetStateProperty.resolveWith<Color?>(

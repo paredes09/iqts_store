@@ -19,13 +19,7 @@ class LoginController extends GetxController {
   Future<User?> signInWithGoogle() async {
     isLogged.value = true;
     try {
-      final GoogleSignInAccount? googleUser =
-          await GoogleSignIn().signIn().timeout(
-        const Duration(seconds: 5),
-        onTimeout: () {
-          throw 'Tiempo de espera agotado';
-        },
-      );
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
       if (googleUser == null) {
         return null;

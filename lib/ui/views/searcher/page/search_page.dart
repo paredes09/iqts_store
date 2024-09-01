@@ -8,16 +8,39 @@ class SearchPage extends GetView<SearchsController> {
   @override
   Widget build(BuildContext context) {
     final TextEditingController textController = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
+          leading: IconButton(
+              style: const ButtonStyle(
+                  overlayColor: WidgetStatePropertyAll(Colors.transparent)),
+              onPressed: () {
+                Get.back();
+              },
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Colors.black38,
+              )),
+          elevation: 2,
+          shadowColor: Colors.white,
+          shape: const Border(
+            bottom: BorderSide(
+              color: Colors.white, // Color del borde inferior
+              width: 2,
+
+              // Grosor del borde
+            ),
+          ),
+          backgroundColor: Colors.white,
           actions: [
             IconButton(
+              color: Colors.black38,
               onPressed: () {
-                controller.clearResults();
-                textController.clear(); // Limpiar el texto del TextField
+                textController.clear();
+                controller.searchList();
               },
-              icon: const Icon(Icons.clear),
-            ),
+              icon: const Icon(Icons.close),
+            )
           ],
           title: TextField(
             textInputAction: TextInputAction.search,
@@ -25,10 +48,11 @@ class SearchPage extends GetView<SearchsController> {
             onChanged: (value) => {controller.onSearch(value)},
             controller: textController,
             autofocus: true,
-            cursorColor: Colors.black54,
+            cursorColor: Colors.black38,
             decoration: const InputDecoration(
               border: InputBorder.none,
               hintText: 'Buscar en Iqts Store',
+              hintStyle: TextStyle(color: Colors.black38, fontSize: 16),
             ),
           )),
       body: Obx(() {
