@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:iqts_store/src/controllers/search_controllers.dart';
+import 'package:iqts_store/ui/global/botones/icon_global_button.dart';
 
 class SearchPage extends GetView<SearchsController> {
   const SearchPage({super.key});
@@ -33,14 +35,10 @@ class SearchPage extends GetView<SearchsController> {
           ),
           backgroundColor: Colors.white,
           actions: [
-            IconButton(
-              color: Colors.black38,
-              onPressed: () {
-                textController.clear();
-                controller.searchList();
-              },
-              icon: const Icon(Icons.close),
-            )
+            iconGlobalButton(HugeIcons.strokeRoundedCancel01, () {
+              textController.clear();
+              controller.searchList();
+            }, Colors.black38),
           ],
           title: TextField(
             textInputAction: TextInputAction.search,

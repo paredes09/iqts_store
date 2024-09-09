@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hugeicons/hugeicons.dart';
+import 'package:iqts_store/ui/global/botones/icon_global_button.dart';
 import 'package:iqts_store/ui/views/usuario/componentes/detalles_container.dart';
 
 Padding cardDireccion(String titulo, localidad, nombre, telefono) {
@@ -7,15 +9,18 @@ Padding cardDireccion(String titulo, localidad, nombre, telefono) {
     padding: const EdgeInsets.all(20.0),
     child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Icon(Icons.home_outlined),
+        const HugeIcon(icon: HugeIcons.strokeRoundedHome06, color: Colors.grey),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               titulo,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+            ),
+            const SizedBox(
+              height: 5,
             ),
             SizedBox(
               width: 230,
@@ -47,12 +52,13 @@ Padding cardDireccion(String titulo, localidad, nombre, telefono) {
                 style: const TextStyle(fontSize: 15, color: Colors.grey)),
           ],
         ),
-        IconButton(
-          onPressed: () {
+        iconGlobalButton(
+          HugeIcons.strokeRoundedPencilEdit02,
+          () {
             Get.toNamed('/add-direccion');
           },
-          icon: const Icon(Icons.mode_edit_outline_outlined),
-        )
+          Colors.grey,
+        ),
       ],
     ),
   );

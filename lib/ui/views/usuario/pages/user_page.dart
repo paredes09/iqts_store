@@ -78,13 +78,6 @@ class UserPage extends GetView<LoginController> {
                       () {},
                       Colors.grey[200]),
                   listTitleOpciones(
-                      'Direcciones',
-                      const HugeIcon(
-                          icon: HugeIcons.strokeRoundedMosqueLocation,
-                          color: Colors.black), () {
-                    Get.toNamed('/direcciones');
-                  }, Colors.grey[200]),
-                  listTitleOpciones(
                       'Ajustes',
                       const HugeIcon(
                           icon: HugeIcons.strokeRoundedSettings02,
@@ -106,17 +99,25 @@ class UserPage extends GetView<LoginController> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  listTitleOpciones(
-                      'Cerrar sesión',
-                      const HugeIcon(
-                          icon: HugeIcons.strokeRoundedLogout04,
-                          color: Colors.black), () {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return modalCerrarSesion();
-                        });
-                  }, Colors.grey[200]),
+                  Obx(() => controller.user.value != null
+                      ? listTitleOpciones(
+                          'Cerrar sesión',
+                          const HugeIcon(
+                              icon: HugeIcons.strokeRoundedLogout04,
+                              color: Colors.black), () {
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return modalCerrarSesion();
+                              });
+                        }, Colors.grey[200])
+                      : listTitleOpciones(
+                          'Ingresar a Iqts store',
+                          const HugeIcon(
+                              icon: HugeIcons.strokeRoundedUser,
+                              color: Colors.black), () {
+                          Get.toNamed('/login-principal');
+                        }, Colors.grey[200])),
                 ],
               ),
             ],

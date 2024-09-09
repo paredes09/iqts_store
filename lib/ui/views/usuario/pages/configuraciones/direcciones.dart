@@ -34,8 +34,8 @@ class DireccionesPage extends GetView {
                         'aroldo francisco paredes piñeiros', '935827864'),
                     InkWell(
                       borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(13),
-                          bottomRight: Radius.circular(13)),
+                          bottomLeft: Radius.circular(5),
+                          bottomRight: Radius.circular(5)),
                       onTap: () {
                         Get.toNamed('/add-direccion');
                       },

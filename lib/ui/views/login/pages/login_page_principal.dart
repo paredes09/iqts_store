@@ -79,7 +79,8 @@ class LoginPrincipalPage extends GetView<LoginController> {
                     await controller.signInWithGoogle();
                     if (controller.user.value != null) {
                       await Future.delayed(const Duration(milliseconds: 100));
-                      Get.offAllNamed(Get.previousRoute);
+                      //Get.offAllNamed(Get.previousRoute);
+                      Get.back();
                     }
                   },
                   child: Container(

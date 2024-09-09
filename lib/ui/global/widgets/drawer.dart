@@ -21,20 +21,22 @@ class DrawerPage extends GetView<LoginController> {
         'route': "/search"
       },
       {
-        'icon': HugeIcons.strokeRoundedNotification02,
-        'name': 'Notificaciones',
-        'route': "/search"
-      },
-      {
         'icon': HugeIcons.strokeRoundedShoppingBag03,
         'name': 'Mis compras',
         'route': "/compra"
       },
-      {
-        'icon': HugeIcons.strokeRoundedFavourite,
-        'name': 'Favoritos',
-        'route': "/favorito"
-      },
+      if (controller.user.value != null)
+        {
+          'icon': HugeIcons.strokeRoundedNotification02,
+          'name': 'Notificaciones',
+          'route': "/search"
+        },
+      if (controller.user.value != null)
+        {
+          'icon': HugeIcons.strokeRoundedFavourite,
+          'name': 'Favoritos',
+          'route': "/favorito"
+        },
       {
         'icon': HugeIcons.strokeRoundedUserSharing,
         'name': 'Mi cuenta',
@@ -222,6 +224,7 @@ class DrawerPage extends GetView<LoginController> {
                                 child: elevateButton(
                                     'Ingresar',
                                     () => {
+                                          Get.back(),
                                           Get.toNamed('/login-principal'),
                                         }),
                               ))

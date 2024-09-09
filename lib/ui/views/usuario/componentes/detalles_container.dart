@@ -9,10 +9,8 @@ Container detallesContainer(titulo) {
       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
       child: Text(
         titulo,
-        style: TextStyle(
-            fontSize: 11,
-            color: Colors.blue.shade700,
-            fontWeight: FontWeight.bold),
+        style: const TextStyle(
+            fontSize: 11, color: Colors.white, fontWeight: FontWeight.bold),
       ),
     ),
   );

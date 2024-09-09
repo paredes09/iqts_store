@@ -68,7 +68,7 @@ class MetodoEntregaPage extends GetView {
                       ),
                     ), */
                     InkWell(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(5),
                       onTap: () {
                         Get.toNamed('/confirmar-compra');
                       },
@@ -87,7 +87,8 @@ class MetodoEntregaPage extends GetView {
                             const Text('Pago en efectivo al recibir el pedido'),
                         trailing: const Icon(
                           Icons.arrow_forward_ios_outlined,
-                          color: Colors.grey,
+                          color: Colors.black38,
+                          size: 20,
                         ),
                       ),
                     ),

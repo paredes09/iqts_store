@@ -6,6 +6,7 @@ import 'package:iqts_store/src/controllers/producto_controller.dart';
 import 'package:iqts_store/src/routes/app_pages.dart';
 import 'package:iqts_store/ui/global/botones/elevate.dart';
 import 'package:iqts_store/ui/global/botones/favorite.dart';
+import 'package:iqts_store/ui/global/botones/icon_global_button.dart';
 import 'package:iqts_store/ui/global/botones/share.dart';
 import 'package:iqts_store/ui/global/widgets/buscador.dart';
 import 'package:iqts_store/ui/global/widgets/drawer.dart';
@@ -65,11 +66,15 @@ class ProductoPage extends GetView<ProductoController> {
                 ),
               )),
           actions: [
-            IconButton(
-                onPressed: () {},
-                icon: const HugeIcon(
-                    icon: HugeIcons.strokeRoundedShoppingCart02,
-                    color: Colors.black))
+            Badge.count(
+              largeSize: 18,
+              alignment:
+                  Alignment.lerp(Alignment.topRight, Alignment.centerLeft, 0.4),
+              backgroundColor: Colors.redAccent,
+              count: 1,
+              child: iconGlobalButton(
+                  HugeIcons.strokeRoundedShoppingCart02, () {}, Colors.black),
+            )
           ],
         ),
         drawer: const DrawerPage(),

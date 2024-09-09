@@ -22,6 +22,7 @@ Card tarjetaAyudaCompra() {
             ),
             const Divider(
               height: 0,
+              color: Colors.black12,
             ),
             for (var item in ayuda)
               InkWell(
@@ -42,6 +43,7 @@ Card tarjetaAyudaCompra() {
                     if (item != ayuda.last)
                       const Divider(
                         height: 0,
+                        color: Colors.black12,
                       )
                     else
                       const SizedBox(),
