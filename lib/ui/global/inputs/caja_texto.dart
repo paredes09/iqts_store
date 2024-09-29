@@ -9,6 +9,7 @@ Widget cajaTexto(String texto) {
         child: Text(texto),
       ),
       TextFormField(
+        cursorColor: Colors.blue.shade500,
         decoration: InputDecoration(
           contentPadding:
               const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
